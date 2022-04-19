@@ -21,7 +21,7 @@
         </h1>
         
         <div class="bar">
-            <input style="display:inline-block;" id="searchbar" class="searchbar" type="text" title="Search">
+            <input style="display:inline-block;" id="searchbar" class="searchbar" type="text" title="Search" placeholder="What do you want to search?">
             <span><a style="display:inline-block;" href="#" onclick="searchFromVoice()"> <img class="voice" style="display:inline;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Google_mic.svg/716px-Google_mic.svg.png" title="Search by Voice"></a></span>
         </div>
 
@@ -30,6 +30,13 @@
             <button onclick="search()" class="button" type="button">Search Photos</button>
             <button onclick="upload()" class="button" type="button">Upload Photos</button>
             
+        </div>
+        <br>
+        <br>
+        <div class="bar">
+            
+            <input style="display:inline-block;" id="customlabels" class="customlabels" type="text" title="Labels" placeholder="Enter your custom labels">
+
         </div>
         <div class="container" id="images">
         </div>

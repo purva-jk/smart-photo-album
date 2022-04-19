@@ -139,9 +139,18 @@ function getBase64(file) {
       let config = {
         headers: { 'Content-Type': file.type }
     };
+    if (document.getElementById('customlabels').value != '') {
+      config.headers = {
+        ...config.headers,
+        'x-amz-meta-customlabels': document.getElementById('customlabels').value
+      }
+    }
 
-    url = 'https://2l1u57c3j8.execute-api.us-east-1.amazonaws.com/dev2/myphotosbucket4/' + file.name
-   axios.put(url, file, config).then(response => {
+    //url = 'https://cors-anywhere.herokuapp.com/corsdemo/https://cors-anywhere.herokuapp.com/corsdemo/https://2l1u57c3j8.execute-api.us-east-1.amazonaws.com/dev2/myphotosbucket4/' + file.name
+    //url = "https://wv9kh6mcxi.execute-api.us-east-1.amazonaws.com/doNotUse/upload/myphotosbucket4/" + file.name
+    //url = "url = \"https://wv9kh6mcxi.execute-api.us-east-1.amazonaws.com/doNotUse/upload/myphotosbucket4/\" + file.name
+    url = "https://2l1u57c3j8.execute-api.us-east-1.amazonaws.com/testCustomLabel/myphotosbucket4/"+ finalName ;
+    axios.put(url, file, config).then(response => {
     //  console.log(" New "+response.data)
     //  alert("Image uploaded successfully!");
      console.log("Success");
